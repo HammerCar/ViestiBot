@@ -23,8 +23,8 @@ client.on('message', msg => {
 });
 
 var job = new CronJob('15 6 * * *', function() {
-    const startDate = new Date(2020, 6, 6)
     const endDate = new Date(2021, 5, 17)
+    const monniDate = new Date(2021, 1, 4)
     const today = new Date()
 
     const dayDiff = (d1, d2) => {
@@ -35,11 +35,12 @@ var job = new CronJob('15 6 * * *', function() {
     }
 
     const untilEnd = dayDiff(today, endDate)
+    const untilMonnit = dayDiff(today, monniDate)
     const name = names[Math.floor(Math.random() * names.length)]
     
     client.channels.fetch(process.env.CHANNEL_ID).then((channel) => {
         if (channel)
-            channel.send(`Hyvää huomenta ${name}\nTJ ${untilEnd}`);
+            channel.send(`Hyvää huomenta ${name}\nTJ ${untilEnd}\nMonni TJ ${untilMonnit}`);
     });
 }, null, true, 'Europe/Helsinki');
 job.start();
