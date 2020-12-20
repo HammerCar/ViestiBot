@@ -24,7 +24,7 @@ client.on('message', msg => {
 
 var job = new CronJob('15 6 * * *', function() {
     const endDate = new Date(2021, 5, 17)
-    const monniDate = new Date(2021, 1, 4)
+    const monniDate = new Date(2021, 0, 4)
     const today = new Date()
 
     const dayDiff = (d1, d2) => {
