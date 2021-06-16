@@ -28,7 +28,7 @@ var job = new CronJob('15 6 * * *', function() {
     const today = new Date()
 
     const dayDiff = (d1, d2) => {
-        return (Math.floor(
+        return -(Math.floor(
         (Date.UTC(d1.getFullYear(), d1.getMonth(), d1.getDate()) -
         Date.UTC(d2.getFullYear(), d2.getMonth(), d2.getDate())) / 
         (1000 * 60 * 60 * 24)))
